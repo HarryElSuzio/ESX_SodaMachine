@@ -93,8 +93,7 @@ RegisterNetEvent('esx_SodaMachine:Random')
 AddEventHandler('esx_SodaMachine:Random', function(prop_name)
 	local lottery =  math.random(1,9)
 	local ped = GetPlayerPed(-1)
-	local blackout = Blackout
-	if lottery <= 6 and not blackout then
+	if lottery <= 6 then
 		if not IsAnimated then
 			local prop_name = prop_name or 'prop_ecola_can'
 			IsAnimated = true
@@ -136,17 +135,17 @@ AddEventHandler('esx_SodaMachine:Random', function(prop_name)
 			end)
 		end
 	end
-	if lottery == 7 and not blackout then
+	if lottery == 7 then
 			Citizen.CreateThread(function()
 			ESX.ShowNotification('This machine is temporarily out of order')
 			end)
 		end
-	if lottery == 8 and not blackout then
+	if lottery == 8 then
 			Citizen.CreateThread(function()
 			ESX.ShowNotification('The machine is out of that product')
 			end)
 		end
-	if lottery == 9 and not blackout then
+	if lottery == 9 then
 			Citizen.CreateThread(function()
 			FreezeEntityPosition(ped, true)
 			ClearPedTasksImmediately(ped)
