@@ -3,7 +3,7 @@ Config.DrawDistance = 100
 Config.Size         = {x = 0.5, y = 1.5, z = 1.5}
 Config.Color        = {r = 0, g = 128, b = 255}
 Config.Type         = 1
-Config.Locale       = 'en'
+Config.Locale       = 'es'
 
 Config.Zones = {
 
@@ -98,6 +98,7 @@ Config.Zones = {
 			{x = -1123.07,	y = -1643.82,  z = 4.66},
 			{x = -246.52,	y = -2002.96,  z = 30.15},
 			{x = -275.87,	y = -2041.86,  z = 30.15},
+			{x = 460.61,	y = -705.33,  z = 27.37},
 		}
 	},
 }
