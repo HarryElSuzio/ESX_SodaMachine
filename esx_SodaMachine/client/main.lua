@@ -23,7 +23,7 @@ end)
 
 function OpenShopMenu(zone)
 	local elements = {}
-	TriggerServerEvent('esx_SodaMachine:buyItem', "cocacola", 1)
+	TriggerServerEvent('esx_SodaMachine:buyItem', "water", 1)
 end
 
 AddEventHandler('esx_SodaMachine:hasEnteredMarker', function(zone)
@@ -101,7 +101,7 @@ AddEventHandler('esx_SodaMachine:Random', function(prop_name)
 			Citizen.CreateThread(function()
 				FreezeEntityPosition(ped, true)
 				ClearPedTasksImmediately(ped)
-				ESX.ShowNotification('Venta. Por favor espera...')
+				ESX.ShowNotification('Vending. Please wait...')
 				TriggerServerEvent('esx_SodaMachine:TakeMoney', 1)
 				Citizen.Wait(3000)
 				TriggerEvent('InteractSound_CL:PlayOnOne', 'SodaMachine', 1.0)
@@ -113,7 +113,7 @@ AddEventHandler('esx_SodaMachine:Random', function(prop_name)
 				end
 				TaskPlayAnim(playerPed, 'amb@medic@standing@kneel@base', 'base', 3.0, 3.0, 2000, 0, 1, true, true, true)
 				Citizen.Wait(700)
-				ESX.ShowNotification('Compraste una lata de ~r~Coca-cola~s~ for ~g~$1~s~. Gracias por su compra!')
+				ESX.ShowNotification('You bought a can of ~r~ecola~s~ for ~g~$1~s~. Thank you for your purchase!')
 				prop = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
 				AttachEntityToEntity(prop, playerPed, GetPedBoneIndex(playerPed, 18905), 0.12, 0.028, 0.001, 300.00, 180.0, 20.0, true, true, false, true, 1, true)
 				Citizen.Wait(1500)
@@ -137,23 +137,23 @@ AddEventHandler('esx_SodaMachine:Random', function(prop_name)
 	end
 	if lottery == 7 then
 			Citizen.CreateThread(function()
-			ESX.ShowNotification('Esta máquina está temporalmente fuera de servicio')
+			ESX.ShowNotification('This machine is temporarily out of order')
 			end)
 		end
 	if lottery == 8 then
 			Citizen.CreateThread(function()
-			ESX.ShowNotification('La máquina no tiene de ese producto.')
+			ESX.ShowNotification('The machine is out of that product')
 			end)
 		end
 	if lottery == 9 then
 			Citizen.CreateThread(function()
 			FreezeEntityPosition(ped, true)
 			ClearPedTasksImmediately(ped)
-			ESX.ShowNotification('Venta. Por favor espera...')
+			ESX.ShowNotification('Vending. Please wait...')
 			Citizen.Wait(3000)
 			TriggerEvent('InteractSound_CL:PlayOnOne', 'SodaMachine', 1.0)
 			Citizen.Wait(5000)
-			ESX.ShowNotification('Hubo un problema con la máquina y has perdido tu dinero.')
+			ESX.ShowNotification('There was a problem with the machine and it took your money')
 			FreezeEntityPosition(ped, false)
 			end)
 		end
